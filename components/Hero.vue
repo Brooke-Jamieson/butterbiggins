@@ -1,30 +1,31 @@
-<script setup>
-const props = defineProps({
-  title: String,
-  description: String,
-  image: String,
-  imageAlt: String,
-  buttons: Array
-});
-</script>
-
 <template>
-  <div class="flex flex-col gap-12 mt-10 mb-20 lg:items-center lg:flex-row">
-    <div class="flex-1 w-full">
-      <NuxtImg class="rounded-lg" sizes="100vw lg:600px" :src="image" :alt="imageAlt" v-if="image" />
-    </div>
-    <div class="flex-1 w-full">
-      <h1 class="text-4xl font-bold text-zinc-800 sm:text-5xl text-balance" v-if="title">{{ title }}</h1>
-      <p class="max-w-xl mt-4 text-lg text-zinc-600 sm:text-xl" v-if="description">
-        {{ description }}
+  <section class="relative min-h-[80vh] flex items-center justify-center">
+    <!-- Background image (optional, subtle) -->
+    <img
+        src="../assets/hero.jpg"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover opacity-50"
+    />
+
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 sm:px-12 ">
+      <h1 class="text-4xl font-bold text-gray-900 md:text-5xl">
+        Your Home, Your Voice
+      </h1>
+      <p class="mt-4 max-w-xl text-gray-700 mx-auto text-lg md:text-xl">
+        A space run by tenants, for tenants. Report issues, share concerns, and help keep our community safe and well-maintained.
       </p>
-      <div class="flex flex-wrap gap-4 mt-8">
-        <div v-for="button of buttons">
-          <NuxtLink v-if="button.label && button.url" :href="button.url"
-            class="inline-flex px-6 py-3 text-white duration-300 bg-green-600 rounded-sm hover:bg-gray-800 transition-color">
-            {{ button.label }}</NuxtLink>
-        </div>
-      </div>
+
+      <!-- CTA button linking to form -->
+      <a
+          href="#tenant-issues-form"
+          class="mt-8 inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      >
+        Report an Issue
+      </a>
     </div>
-  </div>
+  </section>
 </template>

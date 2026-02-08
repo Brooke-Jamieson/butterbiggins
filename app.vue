@@ -1,12 +1,13 @@
 <script setup>
 useHead({
-  htmlAttrs: { lang: "en-US" },
-  title: "Nuxt Starter",
+  htmlAttrs: { lang: "en-GB" },
+  title: "Butterbiggins Road Society",
   meta: [
+    { name: 'robots', content: 'noindex, nofollow' },
     {
       name: "description",
       content:
-        "Nuxt Starter is a minimal template created for quick landing pages, built with Nuxt and Tailwind CSS.",
+        "Butterbiggins Road Society",
     },
   ],
   bodyAttrs: {

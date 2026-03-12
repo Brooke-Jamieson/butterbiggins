@@ -26,7 +26,6 @@ import { StoryblokRichText } from "@storyblok/vue";
 import type { StoryblokRichTextDocumentNode } from "@storyblok/vue";
 
 const config = useRuntimeConfig();
-const token = config.STORYBLOK_DELIVERY_API_TOKEN;
 
 // Server-only fetch: token never reaches client
 const { data: entriesData } = await useAsyncData(
@@ -34,7 +33,6 @@ const { data: entriesData } = await useAsyncData(
     async () => {
       const res = await $fetch("https://api.storyblok.com/v2/cdn/stories", {
         params: {
-          token,
           version: "draft",
           content_type: "newsletterEntry",
           sort_by: "first_published_at:desc",

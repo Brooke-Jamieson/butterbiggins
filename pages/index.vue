@@ -8,7 +8,5 @@ definePageMeta({
   <Container>
     <Hero
     ></Hero>
-    <Cards />
-    <Form/>
   </Container>
 </template>

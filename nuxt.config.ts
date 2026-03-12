@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
   runtimeConfig: {
-    STORYBLOK_DELIVERY_API_TOKEN: process.env.STORYBLOK_DELIVERY_API_TOKEN,
+      STORYBLOK_DELIVERY_API_TOKEN: process.env.STORYBLOK_DELIVERY_API_TOKEN,
   },
 
   vite: {

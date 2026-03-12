@@ -28,30 +28,31 @@ import type { StoryblokRichTextDocumentNode } from "@storyblok/vue";
 const config = useRuntimeConfig();
 const token = config.STORYBLOK_DELIVERY_API_TOKEN;
 
-// Fetch all newsletterEntry stories **server-side only**
+// Server-only fetch: token never reaches client
 const { data: entriesData } = await useAsyncData(
     "newsletterEntries",
-    () =>
-        $fetch("https://api.storyblok.com/v2/cdn/stories", {
-          params: {
-            token,
-            version: "draft",
-            content_type: "newsletterEntry",
-            sort_by: "first_published_at:desc",
-          },
-        }).then(res => res.stories ?? []),
-    { server: true } // key: ensures only runs server-side
+    async () => {
+      const res = await $fetch("https://api.storyblok.com/v2/cdn/stories", {
+        params: {
+          token,
+          version: "draft",
+          content_type: "newsletterEntry",
+          sort_by: "first_published_at:desc",
+        },
+      });
+      return res.stories ?? [];
+    },
+    { server: true } // key: runs only on server
 );
 
 const entries = entriesData.value ?? [];
 
-// Safe helper for Rich Text
+// Safe Rich Text helper
 const safeDoc = (entry: any): StoryblokRichTextDocumentNode => {
-  if (entry?.content?.Description?.type === "doc") return entry.content.Description;
+  if (entry?.content?.announcement?.type === "doc") return entry.content.announcement;
   return { type: "doc", content: [] };
 };
-</script>
-<style scoped>
+</script><style scoped>
 /* Basic card layout */
 .grid {
   display: grid;

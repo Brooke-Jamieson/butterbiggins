@@ -1,7 +1,7 @@
 <template>
-  <section class="min-h-screen bg-gray-50" id="tenant-issues-form">
+  <section class="min-h-screen bg-gray-50" id="contact-form">
     <form
-        name="tenant-issues"
+        name="contact-form"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
@@ -9,7 +9,7 @@
         class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8"
     >
       <!-- Netlify required -->
-      <input type="hidden" name="form-name" value="tenant-issues" />
+      <input type="hidden" name="form-name" value="contact-form" />
 
       <!-- Honeypot -->
       <p class="hidden">
@@ -22,16 +22,34 @@
       <!-- Header -->
       <header class="mb-10">
         <h1 class="text-3xl font-semibold text-gray-900">
-          Report an Issue
+          Contact Us
         </h1>
         <p class="mt-3 max-w-2xl text-gray-600">
-          This site is run by tenants, for tenants.
-          Use this form to report problems with your home or building.
+          Use this form to report a booking issue, submit a newsletter entry,
+          or contact us for any other reason.
         </p>
       </header>
 
       <!-- Form Fields -->
       <div class="space-y-6">
+
+        <!-- Request Type -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">
+            What is this about?
+          </label>
+          <select
+              name="request-type"
+              required
+              class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">Select an option</option>
+            <option>Report a booking error</option>
+            <option>Newsletter entry submission</option>
+            <option>Other</option>
+          </select>
+        </div>
+
         <!-- Name -->
         <div>
           <label class="block text-sm font-medium text-gray-700">
@@ -45,84 +63,46 @@
           />
         </div>
 
-        <!-- Contact -->
+        <!-- Email -->
         <div>
           <label class="block text-sm font-medium text-gray-700">
-            Contact email or phone
+            Email address
           </label>
           <input
-              type="text"
-              name="contact"
-              required
-              class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-          />
-          <p class="mt-1 text-sm text-gray-500">
-            So we can follow up if needed
-          </p>
-        </div>
-
-        <!-- Address -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            Property address
-          </label>
-          <input
-              type="text"
-              name="address"
+              type="email"
+              name="email"
               required
               class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
-        <!-- Issue Type -->
+        <!-- Phone -->
         <div>
           <label class="block text-sm font-medium text-gray-700">
-            What is the issue about?
+            Telephone number
           </label>
-          <select
-              name="issue-type"
+          <input
+              type="tel"
+              name="telephone"
               required
               class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select an option</option>
-            <option>Repairs / Maintenance</option>
-            <option>Heating / Hot Water</option>
-            <option>Damp / Mould</option>
-            <option>Safety Concern</option>
-            <option>Anti-social behaviour</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <!-- Urgency -->
-        <div>
-          <label class="block text-sm font-medium text-gray-700">
-            How urgent is this?
-          </label>
-          <select
-              name="urgency"
-              required
-              class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select urgency</option>
-            <option>Emergency (risk to safety)</option>
-            <option>Urgent</option>
-            <option>Not urgent</option>
-          </select>
+          />
         </div>
 
         <!-- Description -->
         <div>
           <label class="block text-sm font-medium text-gray-700">
-            Describe the issue
+            Description
           </label>
           <textarea
               name="description"
               rows="6"
               required
               class="mt-1 w-full resize-y rounded-md border border-gray-300 px-3 py-2 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+              placeholder="Please describe the issue or submission..."
           ></textarea>
         </div>
+
       </div>
 
       <!-- Submit -->
@@ -131,13 +111,8 @@
             type="submit"
             class="w-full sm:w-auto rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          Submit issue
+          Submit
         </button>
-
-        <p class="mt-4 max-w-2xl text-sm text-gray-500">
-          This form does not replace emergency services.
-          If someone is in immediate danger, contact emergency services.
-        </p>
       </div>
     </form>
   </section>

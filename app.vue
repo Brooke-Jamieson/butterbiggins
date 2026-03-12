@@ -10,6 +10,16 @@ useHead({
         "Butterbiggins Road Society",
     },
   ],
+  app: {
+    head: {
+      script: [
+        {
+          src: '/main.js', // must exist in /public/js/main.js
+          type: 'module',
+        },
+      ],
+    },
+  },
   bodyAttrs: {
     class: 'font-display'
   }

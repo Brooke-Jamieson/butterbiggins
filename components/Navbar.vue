@@ -1,11 +1,31 @@
 <template>
   <Container>
-    <header class="flex flex-row flex-wrap items-center justify-between my-4 gap-x-6 gap-y-4">
-      <div class="flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-zinc-800">
-          <span class="text-green-500">&#10070;</span> Nuxt Starter
-        </a>
-      </div>
+    <header class="my-4">
+      <nav class="flex items-center justify-end gap-8 mx-8">
+        <NuxtLink to="/" class="nav-link">Booking</NuxtLink>
+        <NuxtLink to="/newsletter" class="nav-link">Newsletter</NuxtLink>
+        <NuxtLink to="/contact-us" class="nav-link">Contact Us</NuxtLink>
+      </nav>
     </header>
   </Container>
 </template>
+
+<script setup lang="ts">
+</script>
+
+<style scoped>
+.nav-link {
+  font-weight: 400;
+  color: #27272a;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link.router-link-active {
+  border-bottom: 2px solid black;
+  padding-bottom: 2px;
+}
+</style>

@@ -1,5 +1,4 @@
 <template>
-  <nav>Navbar</nav>
   <section class="relative min-h-[120vh] min-w-100vw mt-20">
     <!-- Koalendar Inline Embed -->
     <div id="inline-widget-meet-with-brooke-jamieson"></div>

@@ -1,24 +1,25 @@
 <template>
   <Navbar />
+  <div class="bg-gray-100 h-screen w-screen">
+    <section class="mx-auto max-w-5xl px-6 py-12 ">
+      <h1 class="text-3xl font-semibold mb-8">Newsletter</h1>
 
-  <section class="mx-auto max-w-5xl px-6 py-12">
-    <h1 class="text-3xl font-semibold mb-8">Newsletter</h1>
-
-    <div v-if="entries.length === 0">
-      <p>Loading newsletter entries...</p>
-    </div>
-
-    <div v-else class="flex flex-col gap-4">
-      <div
-          v-for="entry in entries"
-          :key="entry.uuid"
-          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-      >
-        <h2 class="text-xl font-bold mb-2">{{ entry.name }}</h2>
-        <StoryblokRichText :doc="safeDoc(entry)" />
+      <div v-if="entries.length === 0">
+        <p>Loading newsletter entries...</p>
       </div>
-    </div>
-  </section>
+
+      <div v-else class="flex flex-col gap-4">
+        <div
+            v-for="entry in entries"
+            :key="entry.uuid"
+            class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <h2 class="text-xl font-bold mb-2">{{ entry.name }}</h2>
+          <StoryblokRichText :doc="safeDoc(entry)" />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">

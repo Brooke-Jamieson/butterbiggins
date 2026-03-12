@@ -10,7 +10,7 @@ const password = ref("");
 const error = ref("");
 
 const HASH =
-    "69b7ad4338be10548141401de0d55d66a3b57b3aeeb283692e18c09b90188942";
+    "2b02a156726a3bb6b949eec1d6bcaaaf7a5086f03b376f3488dbf2c69482966f";
 
 async function sha256(text) {
   const data = new TextEncoder().encode(text);
@@ -34,7 +34,7 @@ async function checkPassword() {
 <template>
   <Navbar></Navbar>
   <Container>
-    <div class="relative w-screen"  :style="{ height: 'calc(100vh - 40px)' }">
+    <div class="relative w-screen h-screen bg-gray-100">
     <!-- PASSWORD MODAL -->
     <div v-if="!unlocked" class="overlay">
       <div class="modal">
@@ -57,9 +57,7 @@ async function checkPassword() {
         <p v-if="error" class="error">{{ error }}</p>
       </div>
     </div>
-
-    <!-- CALENDAR -->
-    <Calendar v-if="unlocked"></Calendar>
+      <Calendar v-if="unlocked"></Calendar>
     </div>
   </Container>
 </template>

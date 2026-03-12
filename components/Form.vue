@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-screen bg-gray-50" id="contact-form">
+  <section class="min-h-screen bg-gray-100" id="contact-form">
     <form
         name="contact-form"
         method="POST"

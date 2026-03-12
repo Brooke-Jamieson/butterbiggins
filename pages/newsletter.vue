@@ -25,8 +25,6 @@
 import { StoryblokRichText } from "@storyblok/vue";
 import type { StoryblokRichTextDocumentNode } from "@storyblok/vue";
 
-const config = useRuntimeConfig();
-
 // Server-only fetch: token never reaches client
 const { data: entriesData } = await useAsyncData(
     "newsletterEntries",

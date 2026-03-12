@@ -6,11 +6,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ["~/assets/css/main.css"],
-
   runtimeConfig: {
-    public: {
-      STORYBLOK_DELIVERY_API_TOKEN: process.env.STORYBLOK_DELIVERY_API_TOKEN,
-    },
+    STORYBLOK_DELIVERY_API_TOKEN: process.env.STORYBLOK_DELIVERY_API_TOKEN,
   },
 
   vite: {

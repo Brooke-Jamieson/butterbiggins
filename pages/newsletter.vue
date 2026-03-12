@@ -22,45 +22,35 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { StoryblokRichText } from "@storyblok/vue";
 import type { StoryblokRichTextDocumentNode } from "@storyblok/vue";
 
-const entries = ref<any[]>([]);
+const config = useRuntimeConfig();
+const token = config.STORYBLOK_DELIVERY_API_TOKEN;
 
-// Storyblok configuration
-const STORYBLOK_BASE_URL = "https://api.storyblok.com/v2/cdn";
-const STORYBLOK_TOKEN = useRuntimeConfig().public.STORYBLOK_DELIVERY_API_TOKEN;
+// Fetch all newsletterEntry stories **server-side only**
+const { data: entriesData } = await useAsyncData(
+    "newsletterEntries",
+    () =>
+        $fetch("https://api.storyblok.com/v2/cdn/stories", {
+          params: {
+            token,
+            version: "draft",
+            content_type: "newsletterEntry",
+            sort_by: "first_published_at:desc",
+          },
+        }).then(res => res.stories ?? []),
+    { server: true } // key: ensures only runs server-side
+);
 
-// Fetch all newsletterEntry stories
-try {
-  const { data } = await useFetch(`${STORYBLOK_BASE_URL}/stories`, {
-    params: {
-      token: STORYBLOK_TOKEN,
-      version: "draft",           // "draft" for preview, "published" for live
-      content_type: "newsletterEntry",
-      sort_by: "first_published_at:desc",
-    },
-  });
+const entries = entriesData.value ?? [];
 
-  entries.value = data.value?.stories ?? [];
-
-  if (entries.value.length === 0) {
-    console.warn("Storyblok: No newsletterEntry stories found.");
-  }
-} catch (err) {
-  console.error("Storyblok fetch failed:", err);
-}
-
-// Helper to safely pass a Rich Text document to StoryblokRichText
+// Safe helper for Rich Text
 const safeDoc = (entry: any): StoryblokRichTextDocumentNode => {
-  if (entry?.content?.Description?.type === "doc") {
-    return entry.content.Description;
-  }
-  return { type: "doc", content: [] }; // fallback empty doc
+  if (entry?.content?.announcement?.type === "doc") return entry.content.announcement;
+  return { type: "doc", content: [] };
 };
 </script>
-
 <style scoped>
 /* Basic card layout */
 .grid {

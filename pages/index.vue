@@ -39,16 +39,21 @@ async function checkPassword() {
     <div v-if="!unlocked" class="overlay">
       <div class="modal">
         <h2 class="text-xl mb-2">Enter Password</h2>
-        <p>This can be found on a whiteboard in the common room.</p>
+        <p class="text-sm text-gray-500 mb-2">This can be found on a whiteboard in the common room.</p>
         <input
             type="password"
             v-model="password"
             placeholder="Password"
             @keyup.enter="checkPassword"
+            class="border-2 border-gray-200 rounded mb-2"
         />
 
-        <button @click="checkPassword">Unlock</button>
-
+        <button
+            @click="checkPassword"
+            class="w-full sm:w-auto rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          Unlock Booking System
+        </button>
         <p v-if="error" class="error">{{ error }}</p>
       </div>
     </div>

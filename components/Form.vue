@@ -36,7 +36,7 @@
         <!-- Request Type -->
         <div>
           <label class="block text-sm font-medium text-gray-700">
-            What is this about?
+            Please select a topic
           </label>
           <select
               name="request-type"

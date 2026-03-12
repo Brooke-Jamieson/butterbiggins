@@ -47,7 +47,7 @@ const entries = entriesData.value ?? [];
 
 // Safe helper for Rich Text
 const safeDoc = (entry: any): StoryblokRichTextDocumentNode => {
-  if (entry?.content?.announcement?.type === "doc") return entry.content.announcement;
+  if (entry?.content?.Description?.type === "doc") return entry.content.Description;
   return { type: "doc", content: [] };
 };
 </script>

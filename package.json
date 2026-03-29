@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.21.0",
+    "nuxt": "4.4.2",
     "nuxt-icon": "^0.6.10",
     "tailwindcss": "^4.0.16",
     "vite-plugin-mkcert": "1.17.10",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
+    "@storyblok/nuxt": "10.1.0",
     "@storyblok/vue": "10.1.0",
     "@tailwindcss/vite": "^4.0.16"
   }

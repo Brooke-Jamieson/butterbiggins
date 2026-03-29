@@ -4,4 +4,4 @@
 [build]
   command = "npm run generate" # how to build your project
   functions = "netlify/functions" # where Netlify Functions live
-  publish = "dist" # where the built project lives
+  publish = "dist/" # where the built project lives

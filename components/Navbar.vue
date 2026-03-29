@@ -1,33 +1,59 @@
 <template>
-  <Container>
-    <header class="my-4 flex items-center justify-end " :style="{ height: '40px' }">
-      <nav class="flex items-centerw-max gap-8 mx-8">
-        <NuxtLink to="/" class="nav-link">Booking</NuxtLink>
-        <NuxtLink to="/newsletter" class="nav-link">Newsletter</NuxtLink>
-        <NuxtLink to="/contact-us" class="nav-link">Contact Us</NuxtLink>
-      </nav>
-    </header>
-  </Container>
+	<header :style="{ height: '40px' }" class="my-4 flex items-center justify-between w-full px-8">
+		<div>
+			<svg aria-hidden="true" class="iconify iconify--twemoji" height="35px" preserveAspectRatio="xMidYMid meet"
+				 role="img" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"
+				 xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path d="M36 33.5a1.5 1.5 0 0 1-1.5 1.5h-33a1.5 1.5 0 0 1 0-3h33a1.5 1.5 0 0 1 1.5 1.5z"
+					  fill="#5C913B" />
+				<path d="M12.344 14.702h-2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z"
+					  fill="#A0041E" />
+				<path d="M5.942 32c-.137-4.657-.506-8-.942-8c-.435 0-.804 3.343-.941 8h1.883z" fill="#FFCC4D" />
+				<path d="M10 18.731C10 24.306 7.762 26 5 26c-2.761 0-5-1.694-5-7.269C0 13.154 4 5 5 5s5 8.154 5 13.731z"
+					  fill="#77B255" />
+				<path d="M8 16L21 3l13 13v16H8z" fill="#FFE8B6" />
+				<path d="M21 16h1v16h-1z" fill="#FFCC4D" />
+				<path
+					d="M34 17a.997.997 0 0 1-.707-.293L21 4.414L8.707 16.707a.999.999 0 1 1-1.414-1.414l13-13a.999.999 0 0 1 1.414 0l13 13A.999.999 0 0 1 34 17z"
+					fill="#66757F" />
+				<path
+					d="M21 17a.999.999 0 0 1-.707-1.707l6.5-6.5a.999.999 0 1 1 1.414 1.414l-6.5 6.5A.997.997 0 0 1 21 17z"
+					fill="#66757F" />
+				<path d="M13 26h4v6h-4z" fill="#C1694F" />
+				<path d="M13 17h4v4h-4zm12.5 0h4v4h-4zm0 9h4v4h-4z" fill="#55ACEE" />
+				<path
+					d="M10.625 29.991c0 1.613-.858 2.103-1.917 2.103c-1.058 0-1.917-.49-1.917-2.103c0-1.613 1.533-3.973 1.917-3.973s1.917 2.359 1.917 3.973zm25.25 0c0 1.613-.858 2.103-1.917 2.103c-1.058 0-1.917-.49-1.917-2.103c0-1.613 1.533-3.973 1.917-3.973c.384 0 1.917 2.359 1.917 3.973z"
+					fill="#77B255" />
+			</svg>
+
+		</div>
+		<nav class="flex items-centerw-max gap-8">
+			<NuxtLink class="nav-link" to="/">Booking</NuxtLink>
+			<NuxtLink class="nav-link" to="/newsletter">Newsletter</NuxtLink>
+			<NuxtLink class="nav-link" to="/contact-us">Contact Us</NuxtLink>
+		</nav>
+	</header>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 </script>
 
 <style scoped>
 .nav-link {
-  margin-top: 2px;
-  font-weight: 400;
-  color: #27272a;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
+	margin-top: 2px;
+	font-weight: 400;
+	color: #27272a;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
-  color: #000;
+	color: #000;
 }
 
 .nav-link.router-link-active {
-  border-bottom: 2px solid black;
-  padding-bottom: 2px;
+	border-bottom: 2px solid black;
+	padding-bottom: 2px;
+	font-weight: 600;
 }
 </style>

@@ -26,6 +26,7 @@
     "@storyblok/nuxt": "10.1.0",
     "@storyblok/vue": "10.1.0",
     "@tailwindcss/vite": "^4.0.16",
+    "prettier": "3.8.1",
     "storyblok-js-client": "7.3.0"
   }
 }

@@ -1,12 +1,15 @@
-<script setup lang="ts" async>
-const storyblokApi = useStoryblokApi()
+<script setup lang="ts">
+import type { StoryblokClient } from "storyblok-js-client";
 
-const { data } = await storyblokApi.get('cdn/stories', {
-	version: 'draft',
-	content_type: 'newsletterEntry'
-})
+const { $storyblokClient } = useNuxtApp() as { $storyblokClient: StoryblokClient };
 
-console.log('DATA:', data)
+// Fetch published stories
+const { data } = await $storyblokClient.get("cdn/stories", {
+	version: "published",
+	content_type: "newsletterEntry",
+});
+
+console.log("DATA:", data);
 </script>
 
 <template>

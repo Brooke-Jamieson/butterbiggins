@@ -18,10 +18,14 @@
     "vue": "^3.4.3",
     "vue-router": "^4.2.5"
   },
+  "resolutions": {
+    "entities": "^7.0.0"
+  },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
     "@storyblok/nuxt": "10.1.0",
     "@storyblok/vue": "10.1.0",
-    "@tailwindcss/vite": "^4.0.16"
+    "@tailwindcss/vite": "^4.0.16",
+    "storyblok-js-client": "7.3.0"
   }
 }

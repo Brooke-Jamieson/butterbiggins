@@ -19,11 +19,15 @@ export default defineNuxtConfig({
 			storyblokPublicToken: process.env.STORYBLOK_PUBLIC_API_TOKEN || '',
 		},
 	},
-
 	modules: ['nuxt-icon', '@nuxt/image', '@storyblok/nuxt'],
 	storyblok: {
 		accessToken: '',
 		cacheProvider: 'memory',
 		apiOptions: { region: 'eu' },
+	},
+	icon: {
+		serverBundle: {
+			collections: ['uil', 'mdi'],
+		},
 	},
 });

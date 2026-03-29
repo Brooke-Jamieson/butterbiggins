@@ -1,6 +1,6 @@
 <template>
-	<header :style="{ height: '40px' }" class="my-4 flex items-center justify-between w-full px-8">
-		<div>
+	<header :style="{ height: '40px' }" class="flex items-center justify-between w-full p-8 shadow-lg">
+		<NuxtLink href="/">
 			<svg aria-hidden="true" class="iconify iconify--twemoji" height="35px" preserveAspectRatio="xMidYMid meet"
 				 role="img" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"
 				 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -25,8 +25,7 @@
 					d="M10.625 29.991c0 1.613-.858 2.103-1.917 2.103c-1.058 0-1.917-.49-1.917-2.103c0-1.613 1.533-3.973 1.917-3.973s1.917 2.359 1.917 3.973zm25.25 0c0 1.613-.858 2.103-1.917 2.103c-1.058 0-1.917-.49-1.917-2.103c0-1.613 1.533-3.973 1.917-3.973c.384 0 1.917 2.359 1.917 3.973z"
 					fill="#77B255" />
 			</svg>
-
-		</div>
+		</NuxtLink>
 		<nav class="flex items-centerw-max gap-8">
 			<NuxtLink class="nav-link" to="/">Booking</NuxtLink>
 			<NuxtLink class="nav-link" to="/newsletter">Newsletter</NuxtLink>

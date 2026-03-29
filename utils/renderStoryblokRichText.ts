@@ -5,7 +5,7 @@ export function renderStoryblokRichText(doc: any): string {
 	return doc.content.map((node: any) => {
 		switch (node.type) {
 			case 'paragraph':
-				return `<p>${(node.content?.map((c: any) => c.text).join('')) || ''}</p>`;
+				return `<p class="mb-4">${(node.content?.map((c: any) => c.text).join('')) || ''}</p>`;
 
 			case 'heading':
 				const level = node.attrs?.level || 2;

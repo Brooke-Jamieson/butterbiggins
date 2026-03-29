@@ -15,7 +15,7 @@ const { data } = await $storyblokClient.get('cdn/stories', {
 	<Navbar />
 	<Container>
 		<section id="newsletter" class="mx-auto max-w-3xl min-h-screen">
-			<h1 class="text-3xl font-semibold text-gray-900 mb-3">
+			<h1 class="text-3xl font-semibold text-gray-900 mb-8">
 				Latest Newsletter Updates
 			</h1>
 

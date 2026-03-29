@@ -14,13 +14,15 @@ const { data } = await $storyblokClient.get(`cdn/stories/${slug}`, {
 <template>
 	<Navbar />
 	<Container>
-		<div v-if="data?.story">
-			<!-- NewsletterEntry renders content, including rich text -->
-			<NewsletterEntry :blok="data.story.content" />
-		</div>
+		<section :id="`newsletter-entry-${slug}`" class="mx-auto max-w-3xl min-h-screen">
+			<div v-if="data?.story">
+				<!-- NewsletterEntry renders content, including rich text -->
+				<NewsletterEntry :blok="data.story.content" />
+			</div>
 
-		<div v-else>
-			<p>Newsletter entry not found.</p>
-		</div>
+			<div v-else>
+				<p>Newsletter entry not found.</p>
+			</div>
+		</section>
 	</Container>
 </template>
